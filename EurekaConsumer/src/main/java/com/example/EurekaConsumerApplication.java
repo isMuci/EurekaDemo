@@ -15,6 +15,7 @@ public class EurekaConsumerApplication {
         return new RestTemplate();
     }
 
+
     public static void main(String[] args) {
         SpringApplication.run(EurekaConsumerApplication.class);
     }

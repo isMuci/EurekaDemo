@@ -13,6 +13,7 @@
         <module>EurekaServer02</module>
         <module>EurekaProvider</module>
         <module>EurekaConsumer</module>
+        <module>EurekaProvider02</module>
     </modules>
 
     <parent>

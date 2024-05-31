@@ -55,7 +55,6 @@ public class OrderServiceImpl implements OrderService {
 
     private List<Product> getByLoadBalancer() {
         StringBuffer sb=null;
-
         ServiceInstance si = loadBalancerClient.choose("eureka-provider");
         if(si==null){
             return null;
@@ -63,6 +62,7 @@ public class OrderServiceImpl implements OrderService {
 
         sb = new StringBuffer();
         sb.append("http://"+si.getHost()+":"+si.getPort()+"/product/list");
+        System.out.println(sb);
         ResponseEntity<List<Product>> res = restTemplate.exchange(sb.toString(), HttpMethod.GET, null, new ParameterizedTypeReference<List<Product>>() {
         });
         return res.getBody();
